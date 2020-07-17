@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -46,9 +46,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Login() {
+export default function Login(props) {
+  const [login, setLogin] = useState("");
+  console.log(login);
   const classes = useStyles();
-
+  console.log(props.loggedIn);
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -72,6 +74,8 @@ export default function Login() {
             autoFocus
           />
           <TextField
+            value={login}
+            onChange={(e) => setLogin(e.target.value)}
             variant="outlined"
             margin="normal"
             required

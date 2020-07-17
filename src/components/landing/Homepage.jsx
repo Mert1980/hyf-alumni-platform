@@ -1,18 +1,6 @@
-// import React from "react";
-import Login from "../login/Login";
-import Signup from "../signup/Signup";
-
-// function Homepage() {
-//   return (
-//     // <SignIn />
-//     <Signup />
-//   );
-// }
-
-// export default Homepage;
-
 import React, { useState } from "react";
-import { Redirect, Router } from "react-router";
+import { Redirect, Router, Switch } from "react-router";
+import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -20,6 +8,9 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+
+import Login from "../login/Login";
+import Signup from "../signup/Signup";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Homepage() {
+  let history = useHistory();
   const classes = useStyles();
   const [loggedIn, setLoggedIn] = useState(false);
   const homePage = (
@@ -60,15 +52,5 @@ export default function Homepage() {
     </div>
   );
 
-  return (
-    <>
-      {loggedIn ? (
-        <Router>
-          <Redirect to="/login" />
-        </Router>
-      ) : (
-        homePage
-      )}
-    </>
-  );
+  return <>{loggedIn ? history.push("/login") : homePage}</>;
 }
