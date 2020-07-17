@@ -1,8 +1,13 @@
 import React from "react";
 import "./App.css";
+import Homepage from "./components/landing/Homepage";
 
 function App() {
-  return <div>HYF Alumni Platform</div>;
+  return (
+    <div>
+      <Homepage />
+    </div>
+  );
 }
 
 export default App;
