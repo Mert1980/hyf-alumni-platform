@@ -50,7 +50,14 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
   let history = useHistory();
   const [password, setPassword] = useState("");
-  console.log(password);
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(email);
+    console.log(password);
+  };
+
   const classes = useStyles();
 
   return (
@@ -65,6 +72,8 @@ export default function Login() {
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             variant="outlined"
             margin="normal"
             required
@@ -93,6 +102,7 @@ export default function Login() {
             label="Remember me"
           />
           <Button
+            onClick={handleSubmit}
             type="submit"
             fullWidth
             variant="contained"

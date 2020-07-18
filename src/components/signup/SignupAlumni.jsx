@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -51,6 +51,19 @@ export default function SignupAlumni() {
   let history = useHistory();
   const classes = useStyles();
 
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(firstName);
+    console.log(lastName);
+    console.log(email);
+    console.log(password);
+  };
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -65,6 +78,8 @@ export default function SignupAlumni() {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
@@ -77,6 +92,8 @@ export default function SignupAlumni() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
                 variant="outlined"
                 required
                 fullWidth
@@ -88,6 +105,8 @@ export default function SignupAlumni() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 variant="outlined"
                 required
                 fullWidth
@@ -99,6 +118,8 @@ export default function SignupAlumni() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 variant="outlined"
                 required
                 fullWidth
@@ -117,6 +138,7 @@ export default function SignupAlumni() {
             </Grid> */}
           </Grid>
           <Button
+            onClick={handleSubmit}
             type="submit"
             fullWidth
             variant="contained"

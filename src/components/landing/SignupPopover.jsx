@@ -53,20 +53,18 @@ export default function SignupPopover() {
           horizontal: "center",
         }}
       >
-        <Typography className={classes.typography}>
-          <ButtonGroup
-            variant="text"
-            color="primary"
-            aria-label="text primary button group"
-          >
-            <Button onClick={() => history.push("/signupalumni")}>
-              ALUMNI
-            </Button>
-            <Button onClick={() => history.push("/signupcompany")}>
-              COMPANY
-            </Button>
-          </ButtonGroup>
-        </Typography>
+        {/* <Typography className={classes.typography}> */}
+        <ButtonGroup
+          variant="text"
+          color="primary"
+          aria-label="text primary button group"
+        >
+          <Button onClick={() => history.push("/signupalumni")}>ALUMNI</Button>
+          <Button onClick={() => history.push("/signupcompany")}>
+            COMPANY
+          </Button>
+        </ButtonGroup>
+        {/* </Typography> */}
       </Popover>
     </div>
   );
