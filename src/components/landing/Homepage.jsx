@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Redirect, Router, Switch } from "react-router";
+// import { Redirect, Router, Switch } from "react-router";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -9,8 +9,7 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import Login from "../login/Login";
-import Signup from "../signup/Signup";
+import SignupPopover from "./SignupPopover";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Homepage() {
   let history = useHistory();
   const classes = useStyles();
-  const [loggedIn, setLoggedIn] = useState(false);
+  // const [loggedIn, setLoggedIn] = useState(false);
+
   const homePage = (
     <div className={classes.root}>
       <AppBar position="static">
@@ -43,14 +43,17 @@ export default function Homepage() {
           <Typography variant="h6" className={classes.title}>
             Hackyourfuture Alumni Platform
           </Typography>
-          <Button onClick={() => setLoggedIn(true)} color="inherit">
+          <Button onClick={() => history.push("/login")} color="inherit">
             Login
           </Button>
-          <Button color="inherit">Signup</Button>
+          <SignupPopover />
+          {/* <Button onClick={handlePopover} color="inherit">
+            Signup
+          </Button> */}
         </Toolbar>
       </AppBar>
     </div>
   );
 
-  return <>{loggedIn ? history.push("/login") : homePage}</>;
+  return homePage;
 }

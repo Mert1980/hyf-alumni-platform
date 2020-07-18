@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -17,8 +18,8 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      <Link color="inherit" href="https://hackyourfuture.be/">
+        HackYourFuture-Belgium
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -46,9 +47,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp() {
+export default function SignupCompany() {
   const classes = useStyles();
-
+  let history = useHistory();
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -89,6 +90,17 @@ export default function SignUp() {
                 variant="outlined"
                 required
                 fullWidth
+                id="companyname"
+                label="Company Name"
+                name="companyname"
+                autoComplete="companyname"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
                 id="email"
                 label="Email Address"
                 name="email"
@@ -110,7 +122,7 @@ export default function SignUp() {
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+                label="I want to receive newly uploaded CV's via email."
               />
             </Grid>
           </Grid>
@@ -125,7 +137,7 @@ export default function SignUp() {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link onClick={() => history.push("/login")} variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
