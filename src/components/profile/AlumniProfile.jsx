@@ -7,10 +7,12 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import "./profile.css";
 
 // import Languages from "../profile/Languages";
 // import SimpleRating from "./SimpleRating";
 import LanguageRating from "../profile/LanguageRating";
+import TechnicalRating from "./TechnicalRating";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,7 +50,14 @@ export default function AlumniProfile() {
           </Button>
         </Toolbar>
       </AppBar>
-      <LanguageRating />
+      <div className="parent">
+        <div className="child">
+          <TechnicalRating />
+        </div>
+        <div className="child">
+          <LanguageRating />
+        </div>
+      </div>
     </div>
   );
 
