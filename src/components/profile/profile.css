@@ -7,7 +7,7 @@
 .child {
   background-color: blue;
   width: 250px; /* Or whatever */
-  height: 100px; /* Or whatever */
+  height: 120px; /* Or whatever */
   margin: auto; /* Magic! */
   box-sizing: border-box;
   border-bottom: 2px solid black;
