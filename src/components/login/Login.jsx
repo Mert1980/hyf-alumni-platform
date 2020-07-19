@@ -119,7 +119,10 @@ export default function Login() {
               </Link>
             </Grid>
             <Grid item>
-              <Link onClick={() => history.push("/")} variant="body2">
+              <Link
+                onClick={() => history.push("/signupoption")}
+                variant="body2"
+              >
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

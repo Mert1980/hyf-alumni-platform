@@ -8,8 +8,6 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import SignupPopover from "./SignupPopover";
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -44,7 +42,9 @@ export default function Homepage() {
           <Button onClick={() => history.push("/login")} color="inherit">
             Login
           </Button>
-          <SignupPopover />
+          <Button onClick={() => history.push("/signupoption")} color="inherit">
+            Signup
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
