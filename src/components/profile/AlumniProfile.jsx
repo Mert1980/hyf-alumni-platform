@@ -9,7 +9,8 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 
 // import Languages from "../profile/Languages";
-import SimpleRating from "./SimpleRating";
+// import SimpleRating from "./SimpleRating";
+import LanguageRating from "../profile/LanguageRating";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,7 +48,7 @@ export default function AlumniProfile() {
           </Button>
         </Toolbar>
       </AppBar>
-      <SimpleRating />
+      <LanguageRating />
     </div>
   );
 

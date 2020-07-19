@@ -11,27 +11,31 @@ export default function SimpleRating(props) {
   return (
     <div>
       <Box component="fieldset" mb={3} borderColor="transparent">
-        <p>English</p>
-        <Rating
-          name="simple-controlled"
-          value={en}
-          onChange={(event, newValue) => {
-            setEnValue(newValue);
-            console.log(1, event);
-            console.log(2, newValue);
-            // setEnValue(event.target.value);
-          }}
-        />
-        <p>Dutch</p>
-        <Rating
-          name="simple-controlled"
-          value={nl}
-          onChange={(event, newValue) => {
-            setNlValue(newValue);
-            console.log(3, event);
-            console.log(4, newValue);
-          }}
-        />
+        <div>
+          <p>English</p>
+          <Rating
+            name="english"
+            value={en}
+            onChange={(event, newValue) => {
+              setEnValue(newValue);
+              console.log(1, event);
+              console.log(2, newValue);
+              // setEnValue(event.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <p>Dutch</p>
+          <Rating
+            name="dutch"
+            value={nl}
+            onChange={(event, newValue) => {
+              setNlValue(newValue);
+              console.log(3, event);
+              console.log(4, newValue);
+            }}
+          />
+        </div>
       </Box>
     </div>
   );

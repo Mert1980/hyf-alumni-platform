@@ -16,7 +16,7 @@ export default function LanguageRating() {
           </Grid>
           <Grid item xs={2}>
             <Rating
-              name="simple-controlled"
+              name="english"
               value={english}
               onChange={(event, newValue) => {
                 setEnglish(newValue);
@@ -30,7 +30,7 @@ export default function LanguageRating() {
           </Grid>
           <Grid item xs={2}>
             <Rating
-              name="simple-controlled"
+              name="dutch"
               value={dutch}
               onChange={(event, newValue) => {
                 setDutch(newValue);
@@ -44,7 +44,7 @@ export default function LanguageRating() {
           </Grid>
           <Grid item xs={2}>
             <Rating
-              name="simple-controlled"
+              name="french"
               value={french}
               onChange={(event, newValue) => {
                 setFrench(newValue);
