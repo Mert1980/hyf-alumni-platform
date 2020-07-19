@@ -54,6 +54,7 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    history.push("/profilealumni");
     console.log(email);
     console.log(password);
   };

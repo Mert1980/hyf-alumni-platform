@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-// import { Redirect, Router, Switch } from "react-router";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -26,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Homepage() {
   let history = useHistory();
   const classes = useStyles();
-  // const [loggedIn, setLoggedIn] = useState(false);
 
   const homePage = (
     <div className={classes.root}>
@@ -47,9 +45,6 @@ export default function Homepage() {
             Login
           </Button>
           <SignupPopover />
-          {/* <Button onClick={handlePopover} color="inherit">
-            Signup
-          </Button> */}
         </Toolbar>
       </AppBar>
     </div>
