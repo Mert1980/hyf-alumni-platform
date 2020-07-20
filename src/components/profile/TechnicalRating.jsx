@@ -13,7 +13,7 @@ export default function TechnicalRating() {
     <div>
       <Container maxWidth="sm">
         <Grid container spacing={2}>
-          <Grid item xs={2}>
+          <Grid item xs={5}>
             <Typography component="legend">HTML</Typography>
           </Grid>
           <Grid item xs={2}>
@@ -26,8 +26,8 @@ export default function TechnicalRating() {
             />
           </Grid>
         </Grid>
-        <Grid container spacing={4}>
-          <Grid item xs={2}>
+        <Grid container spacing={2}>
+          <Grid item xs={5}>
             <Typography component="legend">CSS</Typography>
           </Grid>
           <Grid item xs={2}>
@@ -40,8 +40,8 @@ export default function TechnicalRating() {
             />
           </Grid>
         </Grid>
-        <Grid container spacing={4}>
-          <Grid item xs={2}>
+        <Grid container spacing={2}>
+          <Grid item xs={5}>
             <Typography component="legend">Javascript</Typography>
           </Grid>
           <Grid item xs={2}>
