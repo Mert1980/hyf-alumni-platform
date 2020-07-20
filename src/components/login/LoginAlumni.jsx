@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Login() {
+export default function LoginAlumni() {
   let history = useHistory();
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -98,10 +98,10 @@ export default function Login() {
             id="password"
             autoComplete="current-password"
           />
-          <FormControlLabel
+          {/* <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
-          />
+          /> */}
           <Button
             onClick={handleSubmit}
             type="submit"

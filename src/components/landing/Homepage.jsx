@@ -39,7 +39,7 @@ export default function Homepage() {
           <Typography variant="h6" className={classes.title}>
             Hackyourfuture Alumni Platform
           </Typography>
-          <Button onClick={() => history.push("/login")} color="inherit">
+          <Button onClick={() => history.push("/loginoption")} color="inherit">
             Login
           </Button>
           <Button onClick={() => history.push("/signupoption")} color="inherit">

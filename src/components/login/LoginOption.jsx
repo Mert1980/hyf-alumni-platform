@@ -63,13 +63,13 @@ export default function SignupOption() {
               color="textSecondary"
               paragraph
             >
-              Create an account as
+              Sign in as a
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
                   <Button
-                    onClick={() => history.push("/signupalumni")}
+                    onClick={() => history.push("/loginalumni")}
                     variant="contained"
                     color="primary"
                   >
@@ -78,7 +78,7 @@ export default function SignupOption() {
                 </Grid>
                 <Grid item>
                   <Button
-                    onClick={() => history.push("/signupcompany")}
+                    onClick={() => history.push("/logincompany")}
                     variant="outlined"
                     color="primary"
                   >
