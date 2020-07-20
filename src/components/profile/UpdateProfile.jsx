@@ -9,6 +9,8 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import BasicInfo from "./BasicInfo";
 import UploadCV from "./UploadCV";
+import UploadPicture from "./UploadPicture";
+import Links from "./Links";
 import { Grid, Container, TextareaAutosize } from "@material-ui/core";
 import "./profile.css";
 
@@ -56,7 +58,9 @@ export default function AlumniProfile() {
 
       <Container maxWidth="sm">
         <BasicInfo />
-        <UploadCV />
+        <UploadPicture/>
+        <UploadCV/>
+        <Links/>
         <TechnicalRating />
         <LanguageRating />
       </Container>
