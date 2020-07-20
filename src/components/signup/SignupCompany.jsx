@@ -58,7 +58,7 @@ export default function SignupCompany() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
+          Sign up as a Company
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -120,10 +120,10 @@ export default function SignupCompany() {
               />
             </Grid>
             <Grid item xs={12}>
-              <FormControlLabel
+              {/* <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                 label="I want to receive newly uploaded CV's via email."
-              />
+              /> */}
             </Grid>
           </Grid>
           <Button

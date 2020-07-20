@@ -69,7 +69,7 @@ export default function LoginAlumni() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Sign in as an Alumni
         </Typography>
         <form className={classes.form} noValidate>
           <TextField

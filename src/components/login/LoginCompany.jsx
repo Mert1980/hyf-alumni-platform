@@ -69,7 +69,7 @@ export default function LoginCompany() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Sign in as a Company
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
