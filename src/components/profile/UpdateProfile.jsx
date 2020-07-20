@@ -8,6 +8,8 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import BasicInfo from "./BasicInfo";
+import UploadCV from "./UploadCV";
+import { Grid, Container, TextareaAutosize } from "@material-ui/core";
 import "./profile.css";
 
 // import Languages from "../profile/Languages";
@@ -52,17 +54,12 @@ export default function AlumniProfile() {
         </Toolbar>
       </AppBar>
 
-      <div className="parent">
-        <div className="child">
-          <BasicInfo />
-        </div>
-        <div className="child">
-          <TechnicalRating />
-        </div>
-        <div className="child">
-          <LanguageRating />
-        </div>
-      </div>
+      <Container maxWidth="sm">
+        <BasicInfo />
+        <UploadCV />
+        <TechnicalRating />
+        <LanguageRating />
+      </Container>
     </div>
   );
 

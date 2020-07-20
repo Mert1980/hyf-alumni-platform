@@ -10,8 +10,9 @@ export default function LanguageRating() {
   return (
     <div>
       <Container maxWidth="sm">
+        <h3>Languages</h3>
         <Grid container spacing={2}>
-          <Grid item xs={5}>
+          <Grid item xs={3}>
             <Typography component="legend">English</Typography>
           </Grid>
           <Grid item xs={2}>
@@ -25,7 +26,7 @@ export default function LanguageRating() {
           </Grid>
         </Grid>
         <Grid container spacing={2}>
-          <Grid item xs={5}>
+          <Grid item xs={3}>
             <Typography component="legend">Dutch</Typography>
           </Grid>
           <Grid item xs={2}>
@@ -39,7 +40,7 @@ export default function LanguageRating() {
           </Grid>
         </Grid>
         <Grid container spacing={2}>
-          <Grid item xs={5}>
+          <Grid item xs={3}>
             <Typography component="legend">French</Typography>
           </Grid>
           <Grid item xs={2}>
