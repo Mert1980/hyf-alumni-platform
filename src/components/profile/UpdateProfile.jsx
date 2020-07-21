@@ -11,7 +11,9 @@ import BasicInfo from "./BasicInfo";
 import UploadCV from "./UploadCV";
 import UploadPicture from "./UploadPicture";
 import GitHubLink from "./GitHubLink";
-import LinkedInLink from './LinkedInLink';
+import LinkedInLink from "./LinkedInLink";
+import SaveIcon from "@material-ui/icons/Save";
+
 import { Grid, Container, TextareaAutosize } from "@material-ui/core";
 import "./profile.css";
 
@@ -59,12 +61,23 @@ export default function AlumniProfile() {
 
       <Container maxWidth="sm">
         <BasicInfo />
-        <UploadPicture/>
-        <UploadCV/>
-        <GitHubLink/>
-        <LinkedInLink/>
+        <UploadPicture />
+        <UploadCV />
+        <GitHubLink />
+        <LinkedInLink />
         <TechnicalRating />
         <LanguageRating />
+        <Container maxWidth="sm">
+          <Button
+            variant="contained"
+            color="primary"
+            size="small"
+            className={classes.button}
+            startIcon={<SaveIcon />}
+          >
+            Save
+          </Button>
+        </Container>
       </Container>
     </div>
   );
