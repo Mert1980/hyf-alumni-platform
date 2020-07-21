@@ -56,8 +56,20 @@ export default function LoginAlumni() {
   // handle password or username error
   const [error, setError] = useState(false);
 
+  if (error) {
+    setTimeout(() => {
+      setError(false);
+      setEmail("");
+      setPassword("");
+    }, 2000);
+  }
+
+  // follow submission
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitted(true);
     axios
       .post(" https://hyf-almuni.herokuapp.com/alumni/login", {
         email: email,
@@ -151,7 +163,7 @@ export default function LoginAlumni() {
             </Grid>
             <Grid item>
               <Link
-                onClick={() => history.push("/signupoption")}
+                onClick={() => history.push("/signupalumni")}
                 variant="body2"
               >
                 {"Don't have an account? Sign Up"}
