@@ -10,7 +10,8 @@ import MenuIcon from "@material-ui/icons/Menu";
 import BasicInfo from "./BasicInfo";
 import UploadCV from "./UploadCV";
 import UploadPicture from "./UploadPicture";
-import Links from "./Links";
+import GitHubLink from "./GitHubLink";
+import LinkedInLink from './LinkedInLink';
 import { Grid, Container, TextareaAutosize } from "@material-ui/core";
 import "./profile.css";
 
@@ -60,7 +61,8 @@ export default function AlumniProfile() {
         <BasicInfo />
         <UploadPicture/>
         <UploadCV/>
-        <Links/>
+        <GitHubLink/>
+        <LinkedInLink/>
         <TechnicalRating />
         <LanguageRating />
       </Container>
