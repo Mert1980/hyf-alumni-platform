@@ -57,6 +57,9 @@ export default function SignupAlumni() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // handle password or username error
+  const [error, setError] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(firstName);
@@ -76,6 +79,9 @@ export default function SignupAlumni() {
           localStorage.setItem("token", e.data.token);
           localStorage.setItem("ID", e.data.almuni._id);
         }
+      })
+      .catch((err) => {
+        setError(true);
       });
   };
 
@@ -152,6 +158,18 @@ export default function SignupAlumni() {
               />
             </Grid> */}
           </Grid>
+          {error && (
+            <Grid item xs>
+              <Typography
+                component="h6"
+                variant="subtitle1"
+                color="error"
+                align="center"
+              >
+                Please fill out all the fields!
+              </Typography>
+            </Grid>
+          )}
           <Button
             onClick={handleSubmit}
             type="submit"

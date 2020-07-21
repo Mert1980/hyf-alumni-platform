@@ -127,7 +127,6 @@ export default function LoginAlumni() {
                 variant="subtitle1"
                 color="error"
                 align="center"
-                gutterBottom="true"
               >
                 Username or password is not correct!
               </Typography>
