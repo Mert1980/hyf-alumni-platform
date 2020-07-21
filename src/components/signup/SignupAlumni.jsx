@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -62,6 +63,20 @@ export default function SignupAlumni() {
     console.log(lastName);
     console.log(email);
     console.log(password);
+    axios
+      .post("https://hyf-almuni.herokuapp.com/alumni/register", {
+        name: firstName,
+        surname: lastName,
+        email: email,
+        password: password,
+      })
+      .then((e) => {
+        if (e.data.token) {
+          history.push("/loginalumni");
+          localStorage.setItem("token", e.data.token);
+          localStorage.setItem("ID", e.data.almuni._id);
+        }
+      });
   };
 
   return (

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -52,11 +53,27 @@ export default function LoginAlumni() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
+  // handle password or username error
+  const [error, setError] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push("/updateprofile");
-    console.log(email);
-    console.log(password);
+    axios
+      .post(" https://hyf-almuni.herokuapp.com/alumni/login", {
+        email: email,
+        password: password,
+      })
+      .then((e) => {
+        console.log("login", e);
+        if (e.data.token) {
+          localStorage.setItem("token", e.data.token);
+          localStorage.setItem("ID", e.data.alumni._id);
+          history.push("/updateprofile");
+        }
+      })
+      .catch((err) => {
+        setError(true);
+      });
   };
 
   const classes = useStyles();
@@ -102,6 +119,20 @@ export default function LoginAlumni() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           /> */}
+
+          {error && (
+            <Grid item xs>
+              <Typography
+                component="h6"
+                variant="subtitle1"
+                color="error"
+                align="center"
+                gutterBottom="true"
+              >
+                Username or password is not correct!
+              </Typography>
+            </Grid>
+          )}
           <Button
             onClick={handleSubmit}
             type="submit"
@@ -112,6 +143,7 @@ export default function LoginAlumni() {
           >
             Sign In
           </Button>
+
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
