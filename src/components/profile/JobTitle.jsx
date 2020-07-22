@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 
 const JobTitle = () => {
   const classes = useStyles();
-  const [jobTitle, setJobTitle] = React.useState("");
+  const [jobTitle, setJobTitle] = React.useState(10);
   const [open, setOpen] = React.useState(false);
 
   const handleChange = (event) => {
@@ -47,12 +47,10 @@ const JobTitle = () => {
             value={jobTitle}
             onChange={handleChange}
           >
-            <MenuItem value="">
-              <em>FullStack</em>
-            </MenuItem>
-            <MenuItem value={10}>Frontend</MenuItem>
-            <MenuItem value={20}>Backend</MenuItem>
-            <MenuItem value={30}>Design</MenuItem>
+            <MenuItem value={10}>FullStack</MenuItem>
+            <MenuItem value={20}>Frontend</MenuItem>
+            <MenuItem value={30}>Backend</MenuItem>
+            <MenuItem value={40}>Design</MenuItem>
           </Select>
         </FormControl>
       </Container>
