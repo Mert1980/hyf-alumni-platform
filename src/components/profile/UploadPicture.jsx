@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Container, Avatar } from "@material-ui/core";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import { makeStyles } from "@material-ui/core/styles";
+import Upload from "./Upload";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -17,26 +19,26 @@ const useStyles = makeStyles((theme) => ({
 
 const UploadPicture = () => {
   const classes = useStyles();
-  const [picture, setPicture] = React.useState(null);
+  const [file, setFile] = useState("");
 
-  const handleChange = (event) => {
-    setPicture(event.target.value);
+  const handleChange = (e) => {
+    setFile(e.target.value);
   };
-  const uploadHandler = () => {};
+
+  const uploadHandler = () => {
+    axios.post();
+  };
+
   return (
     <div>
+      <Upload />
       <Container spacing={1}>
-        <Avatar src="/broken-image.jpg" className={classes.large} />
-        <input
-          style={{ display: "none" }}
-          type="file"
-          value={picture}
-          onChange={handleChange}
-        ></input>
+        <Avatar src={uploadHandler} className={classes.large} />
         <Button
-          onClick={uploadHandler}
+          onSubmit={handleChange}
           variant="contained"
           color="default"
+          value={file}
           className={classes.button}
           startIcon={<CloudUploadIcon />}
         >
