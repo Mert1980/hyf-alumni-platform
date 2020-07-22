@@ -35,9 +35,6 @@ const JobTitle = () => {
       <Container maxWidth="sm">
         <h2>Job Title</h2>
         <FormControl className={classes.formControl}>
-          <InputLabel id="demo-controlled-open-select-label">
-            Job Title
-          </InputLabel>
           <Select
             labelId="demo-controlled-open-select-label"
             id="demo-controlled-open-select"
