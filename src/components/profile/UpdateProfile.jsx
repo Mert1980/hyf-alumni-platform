@@ -16,9 +16,6 @@ import SaveIcon from "@material-ui/icons/Save";
 
 import { Grid, Container, TextareaAutosize } from "@material-ui/core";
 import "./profile.css";
-
-// import Languages from "../profile/Languages";
-// import SimpleRating from "./SimpleRating";
 import LanguageRating from "../profile/LanguageRating";
 import TechnicalRating from "./TechnicalRating";
 
@@ -69,6 +66,7 @@ export default function AlumniProfile() {
         <LanguageRating />
         <Container maxWidth="sm">
           <Button
+            onClick={() => history.push("/profilealumni")}
             variant="contained"
             color="primary"
             size="small"

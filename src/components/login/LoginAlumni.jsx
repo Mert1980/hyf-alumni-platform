@@ -64,12 +64,8 @@ export default function LoginAlumni() {
     }, 2000);
   }
 
-  // follow submission
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
     axios
       .post(" https://hyf-almuni.herokuapp.com/alumni/login", {
         email: email,
