@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Avatar } from "@material-ui/core";
+import { Button, Container } from "@material-ui/core";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import { makeStyles } from "@material-ui/core/styles";
 import ImageUploading from "react-images-uploading";
