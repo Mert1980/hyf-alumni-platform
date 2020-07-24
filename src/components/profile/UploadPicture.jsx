@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Container, Avatar } from "@material-ui/core";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import { makeStyles } from "@material-ui/core/styles";
-import Upload from "./Upload";
-import axios from "axios";
+import ImageUploading from "react-images-uploading";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -19,31 +18,39 @@ const useStyles = makeStyles((theme) => ({
 
 const UploadPicture = () => {
   const classes = useStyles();
-  const [file, setFile] = useState("");
-
-  const handleChange = (e) => {
-    setFile(e.target.value);
+  const maxNumber = 69;
+  const onChange = (imageList) => {
+    // data for submit
+    console.log(imageList);
   };
-
-  const uploadHandler = () => {
-    axios.post();
-  };
-
   return (
     <div>
-      <Upload />
       <Container spacing={1}>
-        <Avatar src={uploadHandler} className={classes.large} />
-        <Button
-          onSubmit={handleChange}
-          variant="contained"
-          color="default"
-          value={file}
-          className={classes.button}
-          startIcon={<CloudUploadIcon />}
-        >
-          Upload Picture
-        </Button>
+        <ImageUploading multiple onChange={onChange} maxNumber={maxNumber}>
+          {({ imageList, onImageUpload }) => (
+            // write your building UI
+            <div className="upload__image-wrapper">
+              <Button
+                onClick={onImageUpload}
+                variant="contained"
+                color="default"
+                className={classes.button}
+                startIcon={<CloudUploadIcon />}
+              >
+                Upload Picture
+              </Button>
+              &nbsp;
+              {imageList.map((image) => (
+                <div key={image.key} className="image-item">
+                  <img src={image.dataURL} alt="" width="100" />
+                  <div className="image-item__btn-wrapper">
+                    <button onClick={image.onRemove}>Remove</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </ImageUploading>
       </Container>
     </div>
   );

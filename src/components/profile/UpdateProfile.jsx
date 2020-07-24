@@ -61,8 +61,8 @@ export default function AlumniProfile() {
       </AppBar>
 
       <Container maxWidth="sm">
-        <UploadPicture />
         <BasicInfo />
+        <UploadPicture />
         <UploadCV />
         <GitHubLink />
         <LinkedInLink />
