@@ -12,6 +12,7 @@ import UploadCV from "./UploadCV";
 import UploadPicture from "./UploadPicture";
 import GitHubLink from "./GitHubLink";
 import LinkedInLink from "./LinkedInLink";
+import JobTitle from "./JobTitle";
 import SaveIcon from "@material-ui/icons/Save";
 
 import { Grid, Container, TextareaAutosize } from "@material-ui/core";
@@ -62,6 +63,7 @@ export default function AlumniProfile() {
         <UploadCV />
         <GitHubLink />
         <LinkedInLink />
+        <JobTitle />
         <TechnicalRating />
         <LanguageRating />
         <Container maxWidth="sm">
