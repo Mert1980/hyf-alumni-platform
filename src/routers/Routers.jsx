@@ -1,5 +1,4 @@
 import React from "react";
-import "../index.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SignupAlumni from "../components/signup/SignupAlumni";
 import SignupCompany from "../components/signup/SignupCompany";
@@ -12,6 +11,9 @@ import SignupOption from "../components/signup/SignupOption";
 import LoginOption from "../components/login/LoginOption";
 
 import Homepage from "../components/landing/Homepage";
+import "../index.css";
+import ProfilePage from './../components/profilePage/profilePage';
+import Alumni from "../components/profile/alumniprofile/alumni";
 
 export default function Routers() {
   return (
@@ -26,6 +28,9 @@ export default function Routers() {
         <Route exact path="/logincompany" component={LoginCompany} />
         <Route exact path="/updateprofile" component={UpdateProfile} />
         <Route exact path="/profilealumni" component={AlumniProfile} />
+        <Route exact path="/profilePage" component={ProfilePage} />
+        <Route exact path="/alumniProfile" component={Alumni} />
+
         <Route exact path="/profilecompany" component={CompanyProfile} />
       </Switch>
     </Router>

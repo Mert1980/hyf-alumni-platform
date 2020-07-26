@@ -15,6 +15,13 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
+// const uriEndpoin = `https://hyf-almuni.herokuapp.com/alumni/register`;
+
+const uriEndpoin = `http://localhost:8080/`;
+
+
+
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -73,7 +80,7 @@ export default function SignupAlumni() {
     console.log(email);
     console.log(password);
     axios
-      .post("https://hyf-almuni.herokuapp.com/alumni/register", {
+      .post(`${uriEndpoin}alumni/register`, {
         name: firstName,
         surname: lastName,
         email: email,
