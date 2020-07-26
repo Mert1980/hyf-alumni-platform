@@ -54,9 +54,7 @@ class Search extends Component {
     this.setState({ lang: langg });
   };
 
-  handleClick = (i) => {
-    console.log("clicked", i);
-  };
+
   render() {
     return (
       <div>
