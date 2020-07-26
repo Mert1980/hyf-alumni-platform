@@ -13,6 +13,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import axios from "axios";
 
 function Copyright() {
   return (
@@ -46,17 +47,31 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-
+const uriEndPoin = `http://localhost:8080/`;
 export default function LoginCompany() {
   let history = useHistory();
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push("/profilecompany");
-    console.log(email);
-    console.log(password);
+    axios
+      .post(`${uriEndPoin}company/login`, {
+        email: email,
+        password: password,
+      })
+      .then((e) => {
+        console.log("login", e);
+        if (e.data.token) {
+          localStorage.setItem("token", e.data.token);
+          localStorage.setItem("ID", e.data.company._id);
+          history.push("/profilecompany");
+        }
+      })
+      .catch((err) => {
+        setError(true);
+      });
   };
 
   const classes = useStyles();

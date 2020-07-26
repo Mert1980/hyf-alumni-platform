@@ -63,11 +63,12 @@ export default function LoginAlumni() {
       setPassword("");
     }, 2000);
   }
+  const uriEndPoin = `http://localhost:8080/`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(" https://hyf-almuni.herokuapp.com/alumni/login", {
+      .post(`${uriEndPoin}alumni/login`, {
         email: email,
         password: password,
       })
