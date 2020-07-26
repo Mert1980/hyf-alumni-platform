@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Alumni from "./alumniprofile/alumni";
 import Search from './search/profileSearch';
 
 const uriEndpoin = `http://localhost:8080/`;
@@ -22,8 +21,6 @@ class CompanyProfile extends Component {
   render() {
     return (
       <div>
-        {/* {this.state.profiles.length > 0 &&
-          this.state.profiles.map((i) => <Alumni key={i._id} profile={i} />)} */}
           <Search />
       </div>
     );

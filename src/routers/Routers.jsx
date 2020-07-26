@@ -6,13 +6,13 @@ import LoginAlumni from "../components/login/LoginAlumni";
 import LoginCompany from "../components/login/LoginCompany";
 import AlumniProfile from "../components/profile/alumniprofile/AlumniProfile";
 import UpdateProfile from "../components/profile/UpdateProfile";
-import CompanyProfile from "../components/profile/CompanyProfile";
+import CompanyProfile from "../components/profile/CompanyIndex";
 import SignupOption from "../components/signup/SignupOption";
 import LoginOption from "../components/login/LoginOption";
 
 import Homepage from "../components/landing/Homepage";
 import "../index.css";
-import ProfilePage from './../components/profilePage/profilePage';
+import ProfilePage from "./../components/profilePage/profilePage";
 import Alumni from "../components/profile/alumniprofile/alumni";
 
 export default function Routers() {
