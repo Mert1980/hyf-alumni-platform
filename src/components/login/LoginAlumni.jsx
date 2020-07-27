@@ -63,11 +63,12 @@ export default function LoginAlumni() {
       setPassword("");
     }, 2000);
   }
+  const uriEndPoin = `https://hyf-almuni.herokuapp.com/`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(" https://hyf-almuni.herokuapp.com/alumni/login", {
+      .post(`${uriEndPoin}alumni/login`, {
         email: email,
         password: password,
       })
@@ -76,7 +77,7 @@ export default function LoginAlumni() {
         if (e.data.token) {
           localStorage.setItem("token", e.data.token);
           localStorage.setItem("ID", e.data.alumni._id);
-          history.push("/updateprofile");
+          history.push("/profilePage");
         }
       })
       .catch((err) => {

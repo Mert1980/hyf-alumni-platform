@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -13,6 +13,9 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import axios from "axios";
+
+const uriEndpoin = `https://hyf-almuni.herokuapp.com/company/register`;
 
 function Copyright() {
   return (
@@ -48,8 +51,39 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignupCompany() {
+  // const [id, setID] = useState(localStorage.getItem("ID"));
+  const [firstName, setFirstname] = useState("");
+  const [lastName, setLastname] = useState("");
+  const [companyName, setCompanyname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
+
   const classes = useStyles();
   let history = useHistory();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    axios
+      .post(`${uriEndpoin}`, {
+        name: firstName,
+        surname: lastName,
+        email: email,
+        companyName: companyName,
+        password: password,
+      })
+      .then((e) => {
+        if (e.data.token) {
+          history.push("/logincompany");
+          localStorage.setItem("token", e.data.token);
+          console.log(e.data);
+          // localStorage.setItem("ID", e.data.company._id);
+        }
+      })
+      .catch((err) => {
+        setError(true);
+      });
+  };
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -64,6 +98,7 @@ export default function SignupCompany() {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={(e) => setFirstname(e.target.value)}
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
@@ -76,6 +111,7 @@ export default function SignupCompany() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={(e) => setLastname(e.target.value)}
                 variant="outlined"
                 required
                 fullWidth
@@ -87,6 +123,7 @@ export default function SignupCompany() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={(e) => setCompanyname(e.target.value)}
                 variant="outlined"
                 required
                 fullWidth
@@ -98,6 +135,7 @@ export default function SignupCompany() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={(e) => setEmail(e.target.value)}
                 variant="outlined"
                 required
                 fullWidth
@@ -109,6 +147,7 @@ export default function SignupCompany() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={(e) => setPassword(e.target.value)}
                 variant="outlined"
                 required
                 fullWidth
@@ -127,6 +166,7 @@ export default function SignupCompany() {
             </Grid>
           </Grid>
           <Button
+            onClick={handleClick}
             type="submit"
             fullWidth
             variant="contained"
