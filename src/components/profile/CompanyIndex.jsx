@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Search from './search/profileSearch';
+import Search from "./search/profileSearch";
 
-const uriEndpoin = `http://localhost:8080/`;
+const uriEndpoin = `https://hyf-almuni.herokuapp.com/`;
 
 class CompanyProfile extends Component {
   state = {
@@ -15,13 +15,14 @@ class CompanyProfile extends Component {
     };
     axios.get(`${uriEndpoin}alumni`, config).then((res) => {
       this.setState({ profiles: res.data.alumni });
+      console.log("profiles", res.data.alumni);
     });
   }
 
   render() {
     return (
       <div>
-          <Search />
+        <Search />
       </div>
     );
   }

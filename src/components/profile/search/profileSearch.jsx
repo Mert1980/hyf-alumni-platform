@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-const uriEndpoin = `http://localhost:8080/`;
+const uriEndpoin = `https://hyf-almuni.herokuapp.com/`;
 class Search extends Component {
   state = {
     profiles: [],
@@ -23,7 +23,7 @@ class Search extends Component {
     e.preventDefault();
     this.state.profiles.map((i) => {
       i.skills.map((skill) => {
-        if (skill.skill.toLowerCase() == e.target.value.toLowerCase()) {
+        if (skill.skill.toLowerCase() === e.target.value.toLowerCase()) {
           studentID.push(skill.student);
         } else {
           return null;
@@ -54,7 +54,6 @@ class Search extends Component {
     this.setState({ lang: langg });
   };
 
-
   render() {
     return (
       <div>
@@ -63,8 +62,8 @@ class Search extends Component {
           <option value="0" selected>
             Select Skill
           </option>
-          <option value="javascript">javaScrips</option>
-          <option value="mysql">mysql</option>
+          <option value="javascript">JavaScript</option>
+          <option value="mysql">MySQL</option>
           <option value="MongoDB">MongoDB</option>
           <option value="Nodejs">Nodejs</option>
           <option value="HTML">HTML</option>
@@ -79,7 +78,7 @@ class Search extends Component {
           <option value="French">French</option>
         </select>
         <div>
-          <h5>Profiles</h5>
+          <h2>Profiles</h2>
           {this.state.studentsSkill.length > 0 && (
             <ul>
               {this.state.profiles.map((i) =>
@@ -91,7 +90,6 @@ class Search extends Component {
                           <Link
                             to={{
                               pathname: "/alumniProfile",
-
                               state: { i },
                             }}
                           >
@@ -108,12 +106,10 @@ class Search extends Component {
             </ul>
           )}
           {this.state.lang.length > 1
-            ? `There is no ${this.state.lang[0]} Speaker`
+            ? `There are ${this.state.profiles.length} alumni matching your query`
             : null}
           <br />
-          {this.state.studentsSkill.length === 0
-            ? `Try to find alumni by supported Skill`
-            : null}
+          {this.state.studentsSkill.length === 0 ? ` ` : null}
         </div>
       </div>
     );

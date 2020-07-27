@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-const uriEndPoin = `http://localhost:8080/`;
+const uriEndPoin = `https://hyf-almuni.herokuapp.com/`;
 export default function LoginCompany() {
   let history = useHistory();
   const [password, setPassword] = useState("");

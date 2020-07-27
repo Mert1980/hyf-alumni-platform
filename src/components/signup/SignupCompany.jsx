@@ -15,7 +15,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import axios from "axios";
 
-const uriEndpoin = `http://localhost:8080/company/register`;
+const uriEndpoin = `https://hyf-almuni.herokuapp.com/company/register`;
 
 function Copyright() {
   return (
@@ -69,14 +69,14 @@ export default function SignupCompany() {
         name: firstName,
         surname: lastName,
         email: email,
-        companyName:companyName,
+        companyName: companyName,
         password: password,
       })
       .then((e) => {
         if (e.data.token) {
           history.push("/logincompany");
           localStorage.setItem("token", e.data.token);
-          console.log(e.data)
+          console.log(e.data);
           // localStorage.setItem("ID", e.data.company._id);
         }
       })

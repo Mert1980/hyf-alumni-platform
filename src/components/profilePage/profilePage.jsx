@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const uriEndpoin = `http://localhost:8080/`;
+const uriEndpoin = `https://hyf-almuni.herokuapp.com/`;
 
 export default function ProfilePage() {
   const classes = useStyles();
@@ -71,41 +71,47 @@ export default function ProfilePage() {
     axios.patch(`${uriEndpoin}alumni/${id}`, almuniBody, config).then((e) => {
       if (e.status === 200) {
         setSaved(true);
-        console.log(e);
+        console.log(1, e.data);
       } else {
         setSaved(false);
       }
     });
 
     ScriptBody.map((i) => {
-      axios.post(`${uriEndpoin}skill`, i, config).then((e) => {
-        if (e.status === 200) {
-          setSaved(true);
-          console.log(e);
-        } else {
-          setSaved(false);
-        }
-      });
+      if (i !== "") {
+        axios.post(`${uriEndpoin}skill`, i, config).then((e) => {
+          if (e) {
+            setSaved(true);
+            console.log("skill", e.data);
+          } else {
+            setSaved(false);
+          }
+        });
+      }
     });
     languagesBody.map((i) => {
-      axios.post(`${uriEndpoin}language`, i, config).then((e) => {
-        if (e.status === 200) {
-          setSaved(true);
-          console.log(e);
-        } else {
-          setSaved(false);
-        }
-      });
+      if (i !== "") {
+        axios.post(`${uriEndpoin}language`, i, config).then((e) => {
+          if (e) {
+            setSaved(true);
+            console.log("languages", e.data);
+          } else {
+            setSaved(false);
+          }
+        });
+      }
     });
     mediaBody.map((i) => {
-      axios.post(`${uriEndpoin}media`, i, config).then((e) => {
-        if (e.status === 200) {
-          setSaved(true);
-          console.log(e);
-        } else {
-          setSaved(false);
-        }
-      });
+      if (i !== "") {
+        axios.post(`${uriEndpoin}media`, i, config).then((e) => {
+          if (e) {
+            setSaved(true);
+            console.log("media", e.data);
+          } else {
+            setSaved(false);
+          }
+        });
+      }
     });
   }
 

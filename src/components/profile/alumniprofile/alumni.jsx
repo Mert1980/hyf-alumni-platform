@@ -12,7 +12,7 @@ class Alumni extends Component {
     const { profile } = this.state;
     return (
       <div>
-        {profile.length != 0 && (
+        {profile.length !== 0 && (
           <div>
             <h1>Profile {profile.name} </h1>
 
@@ -29,7 +29,7 @@ class Alumni extends Component {
 
             <p>{profile.about}</p>
             <p>{profile.jobTitle}</p>
-            <h5>Techinical Skills</h5>
+            <h5>Technical Skills</h5>
             <ul>
               {profile.skills.map((i) => (
                 <li key={i.skill}>

@@ -17,10 +17,7 @@ import Container from "@material-ui/core/Container";
 
 // const uriEndpoin = `https://hyf-almuni.herokuapp.com/alumni/register`;
 
-const uriEndpoin = `http://localhost:8080/`;
-
-
-
+const uriEndpoin = `https://hyf-almuni.herokuapp.com/`;
 
 function Copyright() {
   return (
