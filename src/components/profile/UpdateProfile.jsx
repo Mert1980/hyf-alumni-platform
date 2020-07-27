@@ -22,6 +22,7 @@ import "./profile.css";
 // import SimpleRating from "./SimpleRating";
 import LanguageRating from "../profile/LanguageRating";
 import TechnicalRating from "./TechnicalRating";
+import UploadCVdemo from "./UploadCVdemo";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -69,6 +70,7 @@ export default function AlumniProfile() {
         <JobTitle />
         <TechnicalRating />
         <LanguageRating />
+        <UploadCVdemo />
         <Container maxWidth="sm">
           <Button
             variant="contained"
