@@ -5,7 +5,7 @@ import SignupAlumni from "../components/signup/SignupAlumni";
 import SignupCompany from "../components/signup/SignupCompany";
 import LoginAlumni from "../components/login/LoginAlumni";
 import LoginCompany from "../components/login/LoginCompany";
-import AlumniProfile from "../components/profile/AlumniProfile";
+import AlumniProfile from "../components/profile/alumniprofile/AlumniProfile";
 import UpdateProfile from "../components/profile/UpdateProfile";
 import CompanyProfile from "../components/profile/CompanyProfile";
 import SignupOption from "../components/signup/SignupOption";

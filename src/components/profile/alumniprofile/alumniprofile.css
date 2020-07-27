@@ -1,0 +1,50 @@
+html,
+body,
+.grid-container {
+  height: 50%;
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-rows: 1fr 0.3fr;
+  gap: 1px 10px;
+  grid-template-areas:
+    "picture about about"
+    "linkedin github downloadCV";
+  /* "tech-skills tech-skills languages languages"; */
+}
+
+.linkedin {
+  grid-area: linkedin;
+}
+
+.github {
+  grid-area: github;
+}
+
+.tech-skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-area: picture;
+}
+
+.about {
+  grid-area: about;
+}
+
+.downloadCV {
+  grid-area: downloadCV;
+}
+
+.languages {
+  grid-area: languages;
+}

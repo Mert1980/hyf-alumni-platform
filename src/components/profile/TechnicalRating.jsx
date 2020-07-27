@@ -1,22 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import Rating from "@material-ui/lab/Rating";
 import Typography from "@material-ui/core/Typography";
-import { Grid, Container, TextareaAutosize } from "@material-ui/core";
+import { Grid, Container, Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import SaveIcon from "@material-ui/icons/Save";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+      width: "25ch",
+    },
+    "& .MuiTextField-root": {
+      margin: theme.spacing(1),
+      width: "30ch",
+    },
+  },
+}));
 
 export default function TechnicalRating() {
-  const [html, setHTML] = React.useState(0);
+  const classes = useStyles();
+
+  const [html, setHTML] = React.useState({ skill: "HTML", rate: 0 });
   const [css, setCSS] = React.useState(0);
   const [javascript, setJavascript] = React.useState(0);
   const [nodejs, setNodejs] = React.useState(0);
   const [mysql, setMySql] = React.useState(0);
   const [mongodb, setMongodb] = React.useState(0);
   const [react, setReact] = React.useState(0);
-  console.log(html);
+
+  // follow submission of basic info
+  const [saved, setSaved] = useState(false);
+
+  if (saved) {
+    setTimeout(() => {
+      setSaved(false);
+    }, 2000);
+  }
+
+  function handleClick() {
+    const config = {
+      headers: { Authorization: localStorage.getItem("token") },
+    };
+    const bodyParameters = {
+      html,
+    };
+    const id = localStorage.getItem("ID");
+    // axios is used to send post request
+    axios
+      .patch(
+        `https://hyf-almuni.herokuapp.com/alumni/${id}`,
+        bodyParameters,
+        config
+      )
+      .then((e) => {
+        if (e.status === 200) {
+          setSaved(true);
+          console.log(e);
+        } else {
+          setSaved(false);
+        }
+      });
+  }
+
   return (
     <div>
       <Container maxWidth="sm">
-        <h2>Script Languages</h2>
+        <h2>Technical Skills</h2>
         <a href="https://www.google.com">What does * mean?</a>
         <Grid container spacing={2}>
           <Grid item xs={3}>
@@ -25,9 +77,9 @@ export default function TechnicalRating() {
           <Grid item xs={2}>
             <Rating
               name="html"
-              value={html}
+              value={html.rate}
               onChange={(event, newValue) => {
-                setHTML(newValue);
+                setHTML({ skill: "HTML", rate: newValue });
               }}
             />
           </Grid>
@@ -115,6 +167,18 @@ export default function TechnicalRating() {
               }}
             />
           </Grid>
+        </Grid>
+        <Grid container spacing={1}>
+          <Button
+            onClick={handleClick}
+            variant="contained"
+            color="primary"
+            size="small"
+            className={classes.button}
+            startIcon={<SaveIcon />}
+          >
+            Save Tech Skills
+          </Button>
         </Grid>
       </Container>
     </div>

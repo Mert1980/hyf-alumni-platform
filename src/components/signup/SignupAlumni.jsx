@@ -60,6 +60,12 @@ export default function SignupAlumni() {
   // handle password or username error
   const [error, setError] = useState(false);
 
+  if (error) {
+    setTimeout(() => {
+      setError(false);
+    }, 2000);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(firstName);
@@ -182,7 +188,10 @@ export default function SignupAlumni() {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link onClick={() => history.push("/login")} variant="body2">
+              <Link
+                onClick={() => history.push("/loginalumni")}
+                variant="body2"
+              >
                 Already have an account? Sign in
               </Link>
             </Grid>

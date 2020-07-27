@@ -6,8 +6,7 @@ import Box from "@material-ui/core/Box";
 export default function SimpleRating(props) {
   const [en, setEnValue] = React.useState(0);
   const [nl, setNlValue] = React.useState(0);
-  console.log("English", en);
-  console.log("Dutch", nl);
+  const [fr, setFrValue] = React.useState(0);
   return (
     <div>
       <Box component="fieldset" mb={3} borderColor="transparent">
@@ -18,9 +17,6 @@ export default function SimpleRating(props) {
             value={en}
             onChange={(event, newValue) => {
               setEnValue(newValue);
-              console.log(1, event);
-              console.log(2, newValue);
-              // setEnValue(event.target.value);
             }}
           />
         </div>
@@ -31,8 +27,16 @@ export default function SimpleRating(props) {
             value={nl}
             onChange={(event, newValue) => {
               setNlValue(newValue);
-              console.log(3, event);
-              console.log(4, newValue);
+            }}
+          />
+        </div>
+        <div>
+          <p>French</p>
+          <Rating
+            name="french"
+            value={fr}
+            onChange={(event, newValue) => {
+              setFrValue(newValue);
             }}
           />
         </div>

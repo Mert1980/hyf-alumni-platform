@@ -9,11 +9,14 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import BasicInfo from "./BasicInfo";
 import UploadCV from "./UploadCV";
+import UploadPicture from "./UploadPicture";
+import GitHubLink from "./GitHubLink";
+import LinkedInLink from "./LinkedInLink";
+import JobTitle from "./JobTitle";
+import SaveIcon from "@material-ui/icons/Save";
+
 import { Grid, Container, TextareaAutosize } from "@material-ui/core";
 import "./profile.css";
-
-// import Languages from "../profile/Languages";
-// import SimpleRating from "./SimpleRating";
 import LanguageRating from "../profile/LanguageRating";
 import TechnicalRating from "./TechnicalRating";
 
@@ -56,9 +59,25 @@ export default function AlumniProfile() {
 
       <Container maxWidth="sm">
         <BasicInfo />
+        <UploadPicture />
         <UploadCV />
+        <GitHubLink />
+        <LinkedInLink />
+        <JobTitle />
         <TechnicalRating />
         <LanguageRating />
+        <Container maxWidth="sm">
+          <Button
+            onClick={() => history.push("/profilealumni")}
+            variant="contained"
+            color="primary"
+            size="small"
+            className={classes.button}
+            startIcon={<SaveIcon />}
+          >
+            Save
+          </Button>
+        </Container>
       </Container>
     </div>
   );

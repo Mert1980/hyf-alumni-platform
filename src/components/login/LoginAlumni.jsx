@@ -56,6 +56,14 @@ export default function LoginAlumni() {
   // handle password or username error
   const [error, setError] = useState(false);
 
+  if (error) {
+    setTimeout(() => {
+      setError(false);
+      setEmail("");
+      setPassword("");
+    }, 2000);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
@@ -151,7 +159,7 @@ export default function LoginAlumni() {
             </Grid>
             <Grid item>
               <Link
-                onClick={() => history.push("/signupoption")}
+                onClick={() => history.push("/signupalumni")}
                 variant="body2"
               >
                 {"Don't have an account? Sign Up"}
