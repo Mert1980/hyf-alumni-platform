@@ -73,7 +73,7 @@ export default function LoginAlumni() {
         password: password,
       })
       .then((e) => {
-        console.log("login", e);
+        console.log("login_data", e.data);
         if (e.data.token) {
           localStorage.setItem("token", e.data.token);
           localStorage.setItem("ID", e.data.alumni._id);
