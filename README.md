@@ -8,6 +8,7 @@
 * [Setup Environment](#setup-environment)
 	* [Installation](#installation)
 	* [Running Application](#running-application)
+	* [Project Structure](#project-structure)
 * [Technology-Tool-Stack](#technology-tool-stack)
 * [API Documentation](https://github.com/oSoc20/hyf-almuni-backend)
 * [Contributing](#contributing)
@@ -41,6 +42,16 @@ npm install
 cd hyf-alumni-frontend
 npm run dev
 ```
+### project-structure
+ * :file_folder: **hyf-alumni-frontend**
+         * :file_folder: **public**
+         * :file_folder: **src**
+	 	* :file_folder: **components**
+		* :file_folder: **routers**
+    * .gitignore
+    * README.md
+    * index.js
+    * package.json    
    
 ## Technology-Tool-Stack
 It is build by *HTML5, CSS3, Material UI, MongoDB, Express, NodeJS and ReactJS (**MERN Stack***). The tools used in front-end are described below.
