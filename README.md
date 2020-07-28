@@ -1,68 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# : HYF Alumni Platform
 
-## Available Scripts
+> **HYF Alumni Platform** enables companies to screen HYF Alumni for their vacancies, while reducing the administrative burden over HYF coordinators and creating more jobs for skilled refugees & immigrants. 
 
-In the project directory, you can run:
+---
+## Index
+* [Learning Objectives and Supported Skills](#learning-objectives-and-supported-skills)
+* [Setup Environment](#setup-environment)
+	* [Installation](#installation)
+	* [Running Application](#running-application)
+  	* [Usage](#Usage)
+* [Technology-Tool-Stack](#technology-tool-stack)
+* [API Documentation]()
+* [Contributing](#contributing)
+* [License](#credits)
 
-### `yarn start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Learning Objectives and Supported Skills
+* Creating a user friendly React Application (using Functional/Class Bases Components and Hooks)
+* Building wireframes, mocks and prototype of pages
+* Setting up a professional folder structure
+* Implementing Continuous Integration and Continuous Deployment (CI/CD)
+* Using GitHub Project Board as project management tool
+* Setting up NodeJS and database connection
+* Debugging React code in IDE
+* Exploring and understanding DOM
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
+## Setup Environment
 
-### `yarn test`
+### installation:
+- Clone Develoment Master Branch of this repo
+- Install the frontend dependencies in **/hyf-alumni-platform** folder --> run **npm install** in the terminal
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### running-application
+  In the root folder **/hyf-alumni-platform**,
+  - To run frontend --> run **npm run dev** in the terminal
+   
+## Technology-Tool-Stack
+It is build by *HTML5, CSS3, Material UI, MongoDB, Express, NodeJS and ReactJS (**MERN Stack***). The tools used in front-end are described below.
 
-### `yarn build`
+- **React** : React. js is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. It's used for handling the view layer for web and mobile apps. React also allows us to create reusable UI components. 
+- **Axios** : Axios is a Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser that also supports the ES6 Promise API. 
+- **Bootstrap** : Bootstrap is a potent front-end framework used to create modern websites and web apps. It's open-source and free to use, yet features numerous HTML and CSS templates for UI interface elements such as buttons and forms. Bootstrap also supports JavaScript extensions.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Contributing
+   - You can contribute in this project by opening an issue or sending a pull request.
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## License
+   MIT
