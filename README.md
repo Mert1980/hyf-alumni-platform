@@ -12,7 +12,7 @@
 * [Technology-Tool-Stack](#technology-tool-stack)
 * [API Documentation](https://github.com/oSoc20/hyf-almuni-backend)
 * [Contributing](#contributing)
-* [License](#credits)
+* [License](#license)
 
 ---
 
@@ -43,15 +43,16 @@ cd hyf-alumni-frontend
 npm run dev
 ```
 ### project-structure
+
  * :file_folder: **hyf-alumni-frontend**
   * :file_folder: **public**
   * :file_folder: **src**
     * :file_folder: **components**
-       * :file_folder: **landing**
-       * :file_folder: **signup**
-       * :file_folder: **login**
-       * :file_folder: **profile**
-       * :file_folder: **logout**
+       * :file_folder: [landing](https://github.com/oSoc20/hyf-alumni-frontend/tree/development-master/src/components/landing)
+       * :file_folder: [signup](https://github.com/oSoc20/hyf-alumni-frontend/tree/development-master/src/components/signup)
+       * :file_folder: [login](https://github.com/oSoc20/hyf-alumni-frontend/tree/development-master/src/components/login)
+       * :file_folder: [profile](https://github.com/oSoc20/hyf-alumni-frontend/tree/development-master/src/components/profile)
+       * :file_folder: [logout](https://github.com/oSoc20/hyf-alumni-frontend/tree/development-master/src/components/logout)
      * :file_folder: **routers**
  * .gitignore
  * README.md
