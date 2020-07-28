@@ -2,18 +2,26 @@ import React from "react";
 import "react-dropzone-uploader/dist/styles.css";
 import Dropzone from "react-dropzone-uploader";
 
+const Preview = ({ meta }) => {
+  const { name, percent, status } = meta;
+  return (
+    <span
+      style={{
+        alignSelf: "flex-start",
+        margin: "10px 3%",
+        fontFamily: "Helvetica",
+      }}
+    >
+      {name}, {Math.round(percent)}%, {status}
+    </span>
+  );
+};
+
 const UploadCVdemo = () => {
-  // specify upload params and url for your files
-  const getUploadParams = ({ meta }) => {
-    return { url: "https://httpbin.org/post" };
-  };
+  const getUploadParams = () => ({
+    url: " https://httpbin.org/post",
+  });
 
-  // called every time a file's `status` changes
-  const handleChangeStatus = ({ meta, file }, status) => {
-    console.log(status, meta, file);
-  };
-
-  // receives array of files that are done uploading when submit button is clicked
   const handleSubmit = (files, allFiles) => {
     console.log(files.map((f) => f.meta));
     allFiles.forEach((f) => f.remove());
@@ -22,9 +30,16 @@ const UploadCVdemo = () => {
   return (
     <Dropzone
       getUploadParams={getUploadParams}
-      onChangeStatus={handleChangeStatus}
       onSubmit={handleSubmit}
-      accept="image/*,audio/*,video/*"
+      PreviewComponent={Preview}
+      inputContent="Drop Files (CV)"
+      disabled={(files) =>
+        files.some((f) =>
+          ["preparing", "getting_upload_params", "uploading"].includes(
+            f.meta.status
+          )
+        )
+      }
     />
   );
 };
