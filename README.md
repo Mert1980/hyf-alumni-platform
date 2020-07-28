@@ -29,12 +29,18 @@
 ## Setup Environment
 
 ### installation:
-- Clone **Develoment-Master** branch :  `git clone https://github.com/oSoc20/hyf-alumni-frontend.git`
-- Install the frontend dependencies in the root folder **/hyf-alumni-platform**: `npm install`
 
+```
+git clone https://github.com/oSoc20/hyf-alumni-frontend.git
+cd hyf-alumni-frontend
+npm install
+```
 ### running-application
-  In the root folder (/hyf-alumni-platform),
-  - `npm run dev` in the terminal
+
+```
+cd hyf-alumni-frontend
+npm run dev
+```
    
 ## Technology-Tool-Stack
 It is build by *HTML5, CSS3, Material UI, MongoDB, Express, NodeJS and ReactJS (**MERN Stack***). The tools used in front-end are described below.
