@@ -45,9 +45,9 @@ npm run dev
 ## Technology-Tool-Stack
 It is build by *HTML5, CSS3, Material UI, MongoDB, Express, NodeJS and ReactJS (**MERN Stack***). The tools used in front-end are described below.
 
-- **React** : React. js is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. It's used for handling the view layer for web and mobile apps. React also allows us to create reusable UI components. Please see for details (https://reactjs.org/docs/getting-started.html)
-- **Axios** : Axios is a Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser that also supports the ES6 Promise API. Please see for details (https://github.com/axios/axios)
-- **Material UI** : Bootstrap is a potent front-end framework used to create modern websites and web apps. It's open-source and free to use, yet features numerous HTML and CSS templates for UI interface elements such as buttons and forms. Bootstrap also supports JavaScript extensions. Please see for details (https://material-ui.com/)
+- **React** : React. js is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. It's used for handling the view layer for web and mobile apps. React also allows us to create reusable UI components. For more info (https://reactjs.org/docs/getting-started.html)
+- **Axios** : Axios is a Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser that also supports the ES6 Promise API. For more info (https://github.com/axios/axios)
+- **Material UI** : Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products. For more info (https://material-ui.com/) (https://material.io/design)
 
 ---
 
