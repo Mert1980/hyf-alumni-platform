@@ -18,7 +18,6 @@ import { Grid, Container, TextareaAutosize } from "@material-ui/core";
 import "./profile.css";
 import LanguageRating from "../profile/LanguageRating";
 import TechnicalRating from "./TechnicalRating";
-import UploadCVdemo from "./UploadCVdemo";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,12 +59,11 @@ export default function AlumniProfile() {
       <Container maxWidth="sm">
         <BasicInfo />
         <UploadPicture />
-        <UploadCV />
         <GitHubLink />
         <LinkedInLink />
         <TechnicalRating />
         <LanguageRating />
-        <UploadCVdemo />
+        <UploadCV />
         <Container maxWidth="sm">
           <Button
             onClick={() => history.push("/profilealumni")}
