@@ -44,14 +44,19 @@ npm run dev
 ```
 ### project-structure
  * :file_folder: **hyf-alumni-frontend**
-         * :file_folder: **public**
-         * :file_folder: **src**
-	 	* :file_folder: **components**
-		* :file_folder: **routers**
-    * .gitignore
-    * README.md
-    * index.js
-    * package.json    
+  * :file_folder: **public**
+  * :file_folder: **src**
+    * :file_folder: **components**
+       * :file_folder: **landing**
+       * :file_folder: **signup**
+       * :file_folder: **login**
+       * :file_folder: **profile**
+       * :file_folder: **logout**
+     * :file_folder: **routers**
+ * .gitignore
+ * README.md
+ * index.js
+ * package.json    
    
 ## Technology-Tool-Stack
 It is build by *HTML5, CSS3, Material UI, MongoDB, Express, NodeJS and ReactJS (**MERN Stack***). The tools used in front-end are described below.
