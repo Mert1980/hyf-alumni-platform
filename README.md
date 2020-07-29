@@ -1,6 +1,6 @@
 # HYF Alumni Platform
 
-> **HYF Alumni Platform** enables companies to screen HYF Alumni for their vacancies, while reducing the administrative burden over HYF coordinators and creating more jobs for skilled refugees & immigrants. 
+> **HYF Alumni Platform** enables companies to screen HYF Alumni for their vacancies, while reducing the administrative burden over HYF coordinators and creating more jobs for skilled refugees & immigrants. For more info https://osoc20.github.io/hyf-alumni-frontend/
 
 > App is live on (https://hyf-alumni-platform.herokuapp.com/)
 
